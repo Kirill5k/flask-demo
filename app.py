@@ -5,7 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config.from_object('config')
 
-# sqlite:///D:\Applications\python\flask-demo\app.db
 db = SQLAlchemy(app)
 
 from books.controllers import books

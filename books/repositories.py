@@ -24,14 +24,14 @@ class BookRepository:
             db.session.commit()
             return new_book.id
         except IntegrityError as error:
-            raise ValueError(error.orig.args[0])
+            raise ValueError(', '.join(error.orig.args))
 
     def update(self, updated_book: Book):
         try:
             db.session.add(updated_book)
             db.session.commit()
         except IntegrityError as error:
-            raise ValueError(error.orig.args[0])
+            raise ValueError(', '.join(error.orig.args))
 
     def delete(self, id: int):
         book = self.get_one(id)
