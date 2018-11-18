@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Book:
-    isbn: int
+class User:
+    id: int
     name: str
-    price: float
+    password: str

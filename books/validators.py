@@ -3,7 +3,7 @@ class ValidationError(Exception):
 
 
 class BookValidator:
-    __book_fields = set(('name', 'price'))
+    __book_fields = set(('name', 'price', 'isbn'))
 
     def validate_book(self, book_json):
         if not self.__book_fields <= book_json.keys():
